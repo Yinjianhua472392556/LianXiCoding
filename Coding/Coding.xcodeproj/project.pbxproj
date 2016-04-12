@@ -28,6 +28,7 @@
 		186C21101CB79D7000E0FB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186C21131CB79D7000E0FB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186C21151CB79D7000E0FB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CA9E5A1CBCE6C400146BA2 /* Coding.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coding.pch; sourceTree = "<group>"; };
 		3391373073B5D437A14523C2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CCD46300E32AA22EA853B4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +74,13 @@
 				186C21101CB79D7000E0FB6D /* Assets.xcassets */,
 				186C21121CB79D7000E0FB6D /* LaunchScreen.storyboard */,
 				186C21151CB79D7000E0FB6D /* Info.plist */,
+				18CA9E531CBCE2CB00146BA2 /* Controllers */,
+				18CA9E541CBCE2CB00146BA2 /* Images */,
+				18CA9E551CBCE2CB00146BA2 /* Models */,
+				18CA9E561CBCE2CB00146BA2 /* Resources */,
+				18CA9E571CBCE2CB00146BA2 /* Util */,
+				18CA9E581CBCE2CB00146BA2 /* Vendor */,
+				18CA9E591CBCE2CB00146BA2 /* Views */,
 				186C21041CB79D7000E0FB6D /* Supporting Files */,
 			);
 			path = Coding;
@@ -82,8 +90,58 @@
 			isa = PBXGroup;
 			children = (
 				186C21051CB79D7000E0FB6D /* main.m */,
+				18CA9E5A1CBCE6C400146BA2 /* Coding.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18CA9E531CBCE2CB00146BA2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		18CA9E541CBCE2CB00146BA2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		18CA9E551CBCE2CB00146BA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18CA9E561CBCE2CB00146BA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18CA9E571CBCE2CB00146BA2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		18CA9E581CBCE2CB00146BA2 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		18CA9E591CBCE2CB00146BA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4D52CC4FA5ED44DF7ACA3A42 /* Pods */ = {
@@ -321,6 +379,8 @@
 			baseConfigurationReference = 03D2602135FDEDFD4012954E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/apple/Desktop/学习Coding/LianXiCoding/Coding/Coding/Coding.pch";
 				INFOPLIST_FILE = Coding/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yjh.Coding;
@@ -333,6 +393,8 @@
 			baseConfigurationReference = E5CCD46300E32AA22EA853B4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/apple/Desktop/学习Coding/LianXiCoding/Coding/Coding/Coding.pch";
 				INFOPLIST_FILE = Coding/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yjh.Coding;

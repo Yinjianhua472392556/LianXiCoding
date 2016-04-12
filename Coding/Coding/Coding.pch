@@ -1,0 +1,17 @@
+//
+//  Coding.pch
+//  Coding
+//
+//  Created by apple on 16/4/12.
+//  Copyright © 2016年 apple. All rights reserved.
+//
+
+#ifndef Coding_pch
+#define Coding_pch
+#import <AFNetworking/AFNetworking.h>
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Coding_pch */
