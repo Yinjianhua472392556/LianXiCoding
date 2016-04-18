@@ -180,6 +180,12 @@
 #define COCOAPODS_VERSION_MINOR_RBBAnimation 4
 #define COCOAPODS_VERSION_PATCH_RBBAnimation 0
 
+// RDVTabBarController
+#define COCOAPODS_POD_AVAILABLE_RDVTabBarController
+#define COCOAPODS_VERSION_MAJOR_RDVTabBarController 1
+#define COCOAPODS_VERSION_MINOR_RDVTabBarController 1
+#define COCOAPODS_VERSION_PATCH_RDVTabBarController 9
+
 // ReactiveCocoa
 #define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
 #define COCOAPODS_VERSION_MAJOR_ReactiveCocoa 2
@@ -263,6 +269,12 @@
 #define COCOAPODS_VERSION_MAJOR_UIImage_BlurredFrame 0
 #define COCOAPODS_VERSION_MINOR_UIImage_BlurredFrame 0
 #define COCOAPODS_VERSION_PATCH_UIImage_BlurredFrame 4
+
+// UMengAnalytics
+#define COCOAPODS_POD_AVAILABLE_UMengAnalytics
+#define COCOAPODS_VERSION_MAJOR_UMengAnalytics 3
+#define COCOAPODS_VERSION_MINOR_UMengAnalytics 6
+#define COCOAPODS_VERSION_PATCH_UMengAnalytics 6
 
 // hpple
 #define COCOAPODS_POD_AVAILABLE_hpple

@@ -9,9 +9,63 @@
 #ifndef Coding_pch
 #define Coding_pch
 #import <AFNetworking/AFNetworking.h>
-
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <UMengAnalytics/MobClick.h>
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIImage+Common.h"
+#import "UIColor+UIColor_Expanded.h"
+#import "NSObject+Common.h"
+//友盟统计
+#define kUmeng_AppKey @""
+#define kUmeng_Event_Request_Notification @"Request_Notification"
+#define kUmeng_Event_Request_RootList @"Request_RootList"
+#define kUmeng_Event_Request_Get @"Request_Get"
+#define kUmeng_Event_Request_ActionOfServer @"Request_ActionOfServer"
+#define kUmeng_Event_Request_ActionOfLocal @"Request_ActionOfLocal"
+
+
+
+
+
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define kPaddingLeftWidth 15.0
+#define kLoginPaddingLeftWidth 18.0
+#define kMySegmentControl_Height 44.0
+#define kMySegmentControlIcon_Height 70.0
+
+#define  kBackButtonFontSize 16
+#define  kNavTitleFontSize 18
+#define  kBadgeTipStr @"badgeTip"
+
+#define kDefaultLastId [NSNumber numberWithInteger:99999999]
+
+#define kColor999 [UIColor colorWithHexString:@"0x999999"]
+#define kColorTableBG [UIColor colorWithHexString:@"0xfafafa"]
+#define kColorTableSectionBg [UIColor colorWithHexString:@"0xeeeeee"]
+
+#define kImage999 [UIImage imageWithColor:kColor999]
+
+#define kPlaceholderMonkeyRoundWidth(_width_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_monkey_round_%.0f", _width_]]
+#define kPlaceholderMonkeyRoundView(_view_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_monkey_round_%.0f", CGRectGetWidth(_view_.frame)]]
+
+#define kPlaceholderCodingSquareWidth(_width_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_coding_square_%.0f", _width_]]
+#define kPlaceholderCodingSquareView(_view_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_coding_square_%.0f", CGRectGetWidth(_view_.frame)]]
+
+#define kScaleFrom_iPhone5_Desgin(_X_) (_X_ * (kScreen_Width/320))
+
+#define kUnReadKey_messages @"messages"
+#define kUnReadKey_notifications @"notifications"
+#define kUnReadKey_project_update_count @"project_update_count"
+#define kUnReadKey_notification_AT @"notification_at"
+#define kUnReadKey_notification_Comment @"notification_comment"
+#define kUnReadKey_notification_System @"notification_system"
+
 
 #endif /* Coding_pch */

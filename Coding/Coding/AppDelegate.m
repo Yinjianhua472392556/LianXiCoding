@@ -7,8 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import <AFNetworking/AFNetworking.h>
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import "sys/utsname.h"
+#import "Login.h"
+#import "FunctionIntroManager.h"
+#import "EaseStartView.h"
+#import "BaseViewController.h"
+#import "ImageSizeManager.h"
+#import "Tweet.h"
 
 @interface AppDelegate ()
 
@@ -16,15 +23,75 @@
 
 @implementation AppDelegate
 
+#pragma mark UserAgent
+
+- (void)registerUserAgent {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    NSString *userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleVersionKey], deviceString, [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)];
+    NSDictionary *dictionary = @{@"UserAgent" : userAgent};//User-Agent
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+}
+
+#pragma lifeCycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // Override point for customization after application launch.
+    
+    //网络
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    //sd加载的数据类型
+    [[[SDWebImageManager sharedManager] imageDownloader] setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    
+    //设置导航条样式
+    [self customizeInterface];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
+    //UIWebView 的 User-Agent
+    [self registerUserAgent];
+    
+    if ([Login isLogin]) {
+        [self setupTabViewController];
+    }else {
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        [self setupIntroductionViewController];
+    }
+    
+    [self.window makeKeyAndVisible];
+    [FunctionIntroManager showIntroPage];
+    EaseStartView *startView = [EaseStartView startView];
+    @weakify(self);
+    [startView startAnimationWithCompletionBlock:^(EaseStartView *easeStartView) {
+        @strongify(self);
+        [self completionStartAnimationWithOptions:launchOptions];
+    }];
+
     return YES;
+}
+
+- (void)completionStartAnimationWithOptions:(NSDictionary *)launchOptions {
+
+    if ([Login isLogin]) {
+        NSDictionary *remoteNotification = [launchOptions valueForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (remoteNotification) {
+            [BaseViewController handleNotificationInfo:remoteNotification applicationState:UIApplicationStateInactive];
+        }
+    }
+    
+    // UMENG 统计
+    [MobClick startWithAppkey:kUmeng_AppKey reportPolicy:BATCH channelId:nil];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [[ImageSizeManager shareManager] save];
+    [[Tweet tweetForSend] saveSendData];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -42,6 +109,29 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Methods Private
+
+- (void)customizeInterface {
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    [navigationBarAppearance setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:[NSObject baseURLStrIsTest]? @"0x3bbd79" : @"0x28303b"]] forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTintColor:[UIColor whiteColor]];//返回按钮的箭头颜色
+    
+    NSDictionary *textAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:kNavTitleFontSize], NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
+    
+    [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"0x3bbc79"]]; //设置UITextField的光标颜色
+    [[UITextView appearance] setTintColor:[UIColor colorWithHexString:@"0x3bbc79"]];//设置UITextView的光标颜色
+    [[UISearchBar appearance] setBackgroundImage:[UIImage imageWithColor:kColorTableSectionBg] forBarPosition:0 barMetrics:UIBarMetricsDefault];
+}
+
+- (void)setupTabViewController {
+
+}
+
+- (void)setupIntroductionViewController {
+
 }
 
 @end
