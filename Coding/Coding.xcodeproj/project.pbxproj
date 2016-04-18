@@ -138,7 +138,6 @@
 				186C21121CB79D7000E0FB6D /* LaunchScreen.storyboard */,
 				186C21151CB79D7000E0FB6D /* Info.plist */,
 				18CA9E531CBCE2CB00146BA2 /* Controllers */,
-				18CA9E541CBCE2CB00146BA2 /* Images */,
 				18CA9E551CBCE2CB00146BA2 /* Models */,
 				18CA9E561CBCE2CB00146BA2 /* Resources */,
 				18CA9E571CBCE2CB00146BA2 /* Util */,
@@ -201,13 +200,6 @@
 				1897C0301CC4C44900B4EF5D /* Me_RootViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		18CA9E541CBCE2CB00146BA2 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		18CA9E551CBCE2CB00146BA2 /* Models */ = {

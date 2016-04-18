@@ -68,4 +68,8 @@
 #define kUnReadKey_notification_System @"notification_system"
 
 
+//常用变量
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+
 #endif /* Coding_pch */
