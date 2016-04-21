@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+
 @interface Login : NSObject
 //请求
 @property (readwrite, nonatomic, strong) NSString *email, *password, *j_captcha;
@@ -17,5 +18,13 @@
 + (BOOL) isLogin;
 + (void) doLogin:(NSDictionary *)loginData;
 + (void) doLogout;
++ (NSString *)preUserEmail;
++ (User *)userWithGlobaykeyOrEmail:(NSString *)textStr;
++ (void)setPreUserEmail:(NSString *)emailStr;
++ (NSMutableDictionary *)readLoginDataList;
+
++ (User *)curLoginUser;
+
+- (NSDictionary *)toParams;
 
 @end

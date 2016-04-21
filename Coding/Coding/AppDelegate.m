@@ -16,12 +16,34 @@
 #import "BaseViewController.h"
 #import "ImageSizeManager.h"
 #import "Tweet.h"
+#import "RootTabViewController.h"
+#import "IntroductionViewController.h"
+#import "LoginViewController.h"
+#import "BaseNavigationController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+
+#pragma mark XGPush
+- (void)registerPush{
+    float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(sysVer < 8){
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    }else{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+                                                                                     categories:[NSSet setWithObject:categorys]];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:userSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+#endif
+    }
+}
 
 #pragma mark UserAgent
 
@@ -62,13 +84,13 @@
     }
     
     [self.window makeKeyAndVisible];
-    [FunctionIntroManager showIntroPage];
-    EaseStartView *startView = [EaseStartView startView];
-    @weakify(self);
-    [startView startAnimationWithCompletionBlock:^(EaseStartView *easeStartView) {
-        @strongify(self);
-        [self completionStartAnimationWithOptions:launchOptions];
-    }];
+//    [FunctionIntroManager showIntroPage];
+//    EaseStartView *startView = [EaseStartView startView];
+//    @weakify(self);
+//    [startView startAnimationWithCompletionBlock:^(EaseStartView *easeStartView) {
+//        @strongify(self);
+//        [self completionStartAnimationWithOptions:launchOptions];
+//    }];
 
     return YES;
 }
@@ -127,11 +149,26 @@
 }
 
 - (void)setupTabViewController {
-
+    RootTabViewController *rootVC = [[RootTabViewController alloc] init];
+    rootVC.tabBar.translucent = YES;
+    [self.window setRootViewController:rootVC];
 }
 
 - (void)setupIntroductionViewController {
+    IntroductionViewController *introductionVC = [[IntroductionViewController alloc] init];
+    [self.window setRootViewController:introductionVC];
 
+}
+
+- (void)setupLoginViewController {
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self.window setRootViewController:[[BaseNavigationController alloc] initWithRootViewController:loginVC]];
+}
+
+#pragma mark - Application's Documents directory
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end
