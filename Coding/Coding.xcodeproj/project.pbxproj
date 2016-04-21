@@ -391,6 +391,9 @@
 		1897C32A1CC4D13000B4EF5D /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1897C3291CC4D13000B4EF5D /* IntroductionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1897C32D1CC4D26300B4EF5D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1897C32C1CC4D26300B4EF5D /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1897C3301CC4E0CE00B4EF5D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1897C32F1CC4E0CE00B4EF5D /* RegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18AB4D601CC8B47D00CFBFF2 /* XTSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D5F1CC8B47D00CFBFF2 /* XTSegmentControl.m */; settings = {ASSET_TAGS = (); }; };
+		18AB4D631CC8B4DB00CFBFF2 /* ProjectMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */; settings = {ASSET_TAGS = (); }; };
+		18AB4D661CC8B54500CFBFF2 /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D651CC8B54500CFBFF2 /* Projects.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A43F1CC5C30A007CA026 /* Login2FATipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A43E1CC5C30A007CA026 /* Login2FATipCell.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A4431CC5C5D5007CA026 /* Input_OnlyText_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A4411CC5C5D5007CA026 /* Input_OnlyText_Cell.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A4441CC5C5D5007CA026 /* Input_OnlyText_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B6A4421CC5C5D5007CA026 /* Input_OnlyText_Cell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -826,6 +829,12 @@
 		1897C32C1CC4D26300B4EF5D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1897C32E1CC4E0CE00B4EF5D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		1897C32F1CC4E0CE00B4EF5D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		18AB4D5E1CC8B47D00CFBFF2 /* XTSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSegmentControl.h; sourceTree = "<group>"; };
+		18AB4D5F1CC8B47D00CFBFF2 /* XTSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSegmentControl.m; sourceTree = "<group>"; };
+		18AB4D611CC8B4DB00CFBFF2 /* ProjectMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMember.h; sourceTree = "<group>"; };
+		18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMember.m; sourceTree = "<group>"; };
+		18AB4D641CC8B54500CFBFF2 /* Projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projects.h; sourceTree = "<group>"; };
+		18AB4D651CC8B54500CFBFF2 /* Projects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projects.m; sourceTree = "<group>"; };
 		18B6A43D1CC5C30A007CA026 /* Login2FATipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login2FATipCell.h; sourceTree = "<group>"; };
 		18B6A43E1CC5C30A007CA026 /* Login2FATipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login2FATipCell.m; sourceTree = "<group>"; };
 		18B6A4401CC5C5D5007CA026 /* Input_OnlyText_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input_OnlyText_Cell.h; sourceTree = "<group>"; };
@@ -1619,6 +1628,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		18AB4D5D1CC8B47D00CFBFF2 /* XTSegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				18AB4D5E1CC8B47D00CFBFF2 /* XTSegmentControl.h */,
+				18AB4D5F1CC8B47D00CFBFF2 /* XTSegmentControl.m */,
+			);
+			path = XTSegmentControl;
+			sourceTree = "<group>";
+		};
 		18B6A43C1CC5C2DE007CA026 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1694,10 @@
 				18CA9E701CBCF76100146BA2 /* Tweet.m */,
 				18B6A4661CC61972007CA026 /* HtmlMedia.h */,
 				18B6A4671CC61972007CA026 /* HtmlMedia.m */,
+				18AB4D611CC8B4DB00CFBFF2 /* ProjectMember.h */,
+				18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */,
+				18AB4D641CC8B54500CFBFF2 /* Projects.h */,
+				18AB4D651CC8B54500CFBFF2 /* Projects.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1700,6 +1722,7 @@
 		18CA9E581CBCE2CB00146BA2 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				18AB4D5D1CC8B47D00CFBFF2 /* XTSegmentControl */,
 				18B6A4611CC61929007CA026 /* NSStringEmojize */,
 				1897C0251CC48B9100B4EF5D /* SMPageControl */,
 				188FD50C1CC1ED4F00E60408 /* RKSwipeBetweenViewControllers */,
@@ -2241,6 +2264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AB4D661CC8B54500CFBFF2 /* Projects.m in Sources */,
 				18CA9E641CBCECC100146BA2 /* FunctionIntroManager.m in Sources */,
 				18B6A44B1CC5CE13007CA026 /* UIView+Frame.m in Sources */,
 				188FD50B1CC1EC2D00E60408 /* MyTask_RootViewController.m in Sources */,
@@ -2264,11 +2288,13 @@
 				18CA9E711CBCF76100146BA2 /* Tweet.m in Sources */,
 				18B6A4601CC618DF007CA026 /* NSString+Common.m in Sources */,
 				188FD5051CC1EA9400E60408 /* RootTabViewController.m in Sources */,
+				18AB4D631CC8B4DB00CFBFF2 /* ProjectMember.m in Sources */,
 				18B6A4651CC61929007CA026 /* NSString+Emojize.m in Sources */,
 				186C21061CB79D7000E0FB6D /* main.m in Sources */,
 				1897C0341CC4C59E00B4EF5D /* Tweet_RootViewController.m in Sources */,
 				18B6A4481CC5C8A1007CA026 /* UITapImageView.m in Sources */,
 				1897C02B1CC4C3EF00B4EF5D /* Message_RootViewController.m in Sources */,
+				18AB4D601CC8B47D00CFBFF2 /* XTSegmentControl.m in Sources */,
 				18B6A4541CC5D7E5007CA026 /* Coding_NetAPIManager.m in Sources */,
 				18B6A46E1CC625B7007CA026 /* NSObject+ObjectMap.m in Sources */,
 				18E7423C1CC76B15008DFC21 /* NSURL+Common.m in Sources */,
