@@ -394,6 +394,7 @@
 		18AB4D601CC8B47D00CFBFF2 /* XTSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D5F1CC8B47D00CFBFF2 /* XTSegmentControl.m */; settings = {ASSET_TAGS = (); }; };
 		18AB4D631CC8B4DB00CFBFF2 /* ProjectMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */; settings = {ASSET_TAGS = (); }; };
 		18AB4D661CC8B54500CFBFF2 /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D651CC8B54500CFBFF2 /* Projects.m */; settings = {ASSET_TAGS = (); }; };
+		18AB4D6A1CC8BBED00CFBFF2 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AB4D691CC8BBED00CFBFF2 /* iCarousel.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A43F1CC5C30A007CA026 /* Login2FATipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A43E1CC5C30A007CA026 /* Login2FATipCell.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A4431CC5C5D5007CA026 /* Input_OnlyText_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A4411CC5C5D5007CA026 /* Input_OnlyText_Cell.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A4441CC5C5D5007CA026 /* Input_OnlyText_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B6A4421CC5C5D5007CA026 /* Input_OnlyText_Cell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -410,6 +411,7 @@
 		18B6A4681CC61972007CA026 /* HtmlMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A4671CC61972007CA026 /* HtmlMedia.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A46B1CC61CF6007CA026 /* EaseInputTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A46A1CC61CF6007CA026 /* EaseInputTipsView.m */; settings = {ASSET_TAGS = (); }; };
 		18B6A46E1CC625B7007CA026 /* NSObject+ObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6A46D1CC625B7007CA026 /* NSObject+ObjectMap.m */; settings = {ASSET_TAGS = (); }; };
+		18BA65661CCA0BE400473560 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA65651CCA0BE400473560 /* Project.m */; settings = {ASSET_TAGS = (); }; };
 		18CA9E5D1CBCEB6400146BA2 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CA9E5C1CBCEB6400146BA2 /* Login.m */; settings = {ASSET_TAGS = (); }; };
 		18CA9E601CBCEB7600146BA2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CA9E5F1CBCEB7600146BA2 /* User.m */; settings = {ASSET_TAGS = (); }; };
 		18CA9E641CBCECC100146BA2 /* FunctionIntroManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CA9E631CBCECC100146BA2 /* FunctionIntroManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -835,6 +837,8 @@
 		18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMember.m; sourceTree = "<group>"; };
 		18AB4D641CC8B54500CFBFF2 /* Projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projects.h; sourceTree = "<group>"; };
 		18AB4D651CC8B54500CFBFF2 /* Projects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projects.m; sourceTree = "<group>"; };
+		18AB4D681CC8BBED00CFBFF2 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		18AB4D691CC8BBED00CFBFF2 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		18B6A43D1CC5C30A007CA026 /* Login2FATipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login2FATipCell.h; sourceTree = "<group>"; };
 		18B6A43E1CC5C30A007CA026 /* Login2FATipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login2FATipCell.m; sourceTree = "<group>"; };
 		18B6A4401CC5C5D5007CA026 /* Input_OnlyText_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input_OnlyText_Cell.h; sourceTree = "<group>"; };
@@ -867,6 +871,8 @@
 		18B6A46A1CC61CF6007CA026 /* EaseInputTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseInputTipsView.m; sourceTree = "<group>"; };
 		18B6A46C1CC625B7007CA026 /* NSObject+ObjectMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectMap.h"; sourceTree = "<group>"; };
 		18B6A46D1CC625B7007CA026 /* NSObject+ObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMap.m"; sourceTree = "<group>"; };
+		18BA65641CCA0BE400473560 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		18BA65651CCA0BE400473560 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		18CA9E5A1CBCE6C400146BA2 /* Coding.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coding.pch; sourceTree = "<group>"; };
 		18CA9E5B1CBCEB6400146BA2 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		18CA9E5C1CBCEB6400146BA2 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
@@ -1637,6 +1643,15 @@
 			path = XTSegmentControl;
 			sourceTree = "<group>";
 		};
+		18AB4D671CC8BBBD00CFBFF2 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				18AB4D681CC8BBED00CFBFF2 /* iCarousel.h */,
+				18AB4D691CC8BBED00CFBFF2 /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 		18B6A43C1CC5C2DE007CA026 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1698,6 +1713,8 @@
 				18AB4D621CC8B4DB00CFBFF2 /* ProjectMember.m */,
 				18AB4D641CC8B54500CFBFF2 /* Projects.h */,
 				18AB4D651CC8B54500CFBFF2 /* Projects.m */,
+				18BA65641CCA0BE400473560 /* Project.h */,
+				18BA65651CCA0BE400473560 /* Project.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1722,6 +1739,7 @@
 		18CA9E581CBCE2CB00146BA2 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				18AB4D671CC8BBBD00CFBFF2 /* iCarousel */,
 				18AB4D5D1CC8B47D00CFBFF2 /* XTSegmentControl */,
 				18B6A4611CC61929007CA026 /* NSStringEmojize */,
 				1897C0251CC48B9100B4EF5D /* SMPageControl */,
@@ -2309,7 +2327,9 @@
 				1897C0311CC4C44900B4EF5D /* Me_RootViewController.m in Sources */,
 				18B6A4431CC5C5D5007CA026 /* Input_OnlyText_Cell.m in Sources */,
 				18B6A46B1CC61CF6007CA026 /* EaseInputTipsView.m in Sources */,
+				18AB4D6A1CC8BBED00CFBFF2 /* iCarousel.m in Sources */,
 				188FD5151CC1EE1300E60408 /* EasePageViewController.m in Sources */,
+				18BA65661CCA0BE400473560 /* Project.m in Sources */,
 				18CA9E5D1CBCEB6400146BA2 /* Login.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
