@@ -7,7 +7,13 @@
 //
 
 #import "BaseViewController.h"
+#import "iCarousel.h"
+#import "XTSegmentControl.h"
+#import "Projects.h"
 
-@interface Project_RootViewController : BaseViewController
+@interface Project_RootViewController : BaseViewController<iCarouselDelegate,iCarouselDataSource>
+
+@property (nonatomic, strong) NSArray *segmentItems;
+@property (nonatomic, assign) BOOL icarouselScrollEnabled;
 
 @end

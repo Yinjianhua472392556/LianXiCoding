@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Project.h"
 
 typedef NS_ENUM(NSUInteger, ProjectsType) {
     ProjectsTypeAll = 0,

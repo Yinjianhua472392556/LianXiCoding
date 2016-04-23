@@ -11,6 +11,7 @@
 @interface BaseViewController : UIViewController
 
 + (void)handleNotificationInfo:(NSDictionary *)userInfo applicationState:(UIApplicationState)applicationState;
+- (void)tabBarItemClicked;
 
 
 @end

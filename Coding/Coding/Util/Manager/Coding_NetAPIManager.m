@@ -72,4 +72,31 @@
     [requestOperation start];
 }
 
+- (void)request_Projects_WithObj:(Projects *)projects andBlock:(void (^)(Projects *, NSError *))block {
+    projects.isLoading = YES;
+    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:[projects toPath] withParams:[projects toParams] withMethodType:Get andBlock:^(id data, NSError *error) {
+        projects.isLoading = NO;
+        if (data) {
+            id resultData = [data valueForKeyPath:@"data"];
+            Projects *pros = [NSObject objectOfClass:@"Projects" fromJSON:resultData];
+            block(pros,nil);
+        }else {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)request_Project_Pin:(Project *)project andBlock:(void (^)(id, NSError *))block {
+    NSString *path = [NSString stringWithFormat:@"api/user/projects/pin"];
+    NSDictionary *params = @{@"ids": project.id.stringValue};
+    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:path withParams:params withMethodType:project.pin.boolValue? Delete : Post andBlock:^(id data, NSError *error) {
+        if (data) {
+            block(data,nil);
+        }else {
+            block(nil,error);
+        }
+    }];
+
+}
+
 @end

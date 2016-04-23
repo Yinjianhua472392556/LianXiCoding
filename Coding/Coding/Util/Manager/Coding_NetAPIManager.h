@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Projects.h"
 
 typedef NS_ENUM(NSUInteger, VerifyType) {
     VerifyTypeUnknow = 0,
@@ -28,4 +29,8 @@ typedef NS_ENUM(NSUInteger, VerifyType) {
 
 //Image
 - (void)loadImageWithPath:(NSString *)imageUrlStr completeBlock:(void(^)(UIImage *image, NSError *error))block;
+
+//Project
+- (void)request_Projects_WithObj:(Projects *)projects andBlock:(void (^)(Projects *data, NSError *error))block;
+- (void)request_Project_Pin:(Project *)project andBlock:(void (^)(id data, NSError *error))block;
 @end

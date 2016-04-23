@@ -34,6 +34,8 @@ typedef void(^XTSegmentControlBlock)(NSInteger index);
 
 - (instancetype)initWithFrame:(CGRect)frame Items:(NSArray *)titleItem withIcon:(BOOL)isIcon selectedBlock:(XTSegmentControlBlock)selectedHandle;
 
+- (void)moveIndexWithProgress:(float)progress;
+
 
 - (void)selectIndex:(NSInteger)index;
 
