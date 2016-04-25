@@ -10,14 +10,7 @@
 
 @implementation ProjectListTaCell
 
-- (void)awakeFromNib {
-    // Initialization code
++(CGFloat)cellHeight {
+    return 75.f;
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 @end

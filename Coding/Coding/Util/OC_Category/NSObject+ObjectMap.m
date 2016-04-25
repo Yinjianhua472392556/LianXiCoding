@@ -193,6 +193,7 @@ static const char * getPropertyType(objc_property_t property) {
         // If it's an array, check for each object in array -> make into object/id
         else if ([[dict objectForKey:key] isKindOfClass:[NSArray class]]) {
             NSArray *nestedArray = [dict objectForKey:key];
+            
             NSString *propertyType = [newObject valueForKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@", key]];
             [newObject setValue:[NSObject arrayMapFromArray:nestedArray forPropertyName:propertyType] forKey:propertyName];
         }

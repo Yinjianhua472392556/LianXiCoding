@@ -233,12 +233,14 @@ typedef NS_ENUM(NSInteger, XTSegmentControlItemType)
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame Items:(NSArray *)titleItem selectedBlock:(XTSegmentControlBlock)selectedHandle
-{
+
+
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)titleItem selectedBlock:(XTSegmentControlBlock)selectedHandle {
     if (self = [self initWithFrame:frame Items:titleItem]) {
         self.block = selectedHandle;
     }
     return self;
+
 }
 
 - (void)doTap:(UITapGestureRecognizer *)sender

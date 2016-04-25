@@ -116,6 +116,35 @@ static NSString *const kValueKey = @"kValueKey";
     }];
 }
 
+
+- (void)setProjects:(Projects *)projects {
+
+    self.myProjects = projects;
+    [self setupDataList];
+    [self refreshUI];
+}
+
+
+- (void)refreshUI {
+
+    [_myTableView reloadData];
+    [self refreshFirst];
+}
+
+- (void)refreshFirst {
+    if (_myProjects && !_myProjects.list) {
+        [self performSelector:@selector(refresh) withObject:nil afterDelay:0.3];
+    }
+    
+}
+
+- (void)refreshToQueryData {
+
+    [self refresh];
+}
+
+
+
 - (void)refresh {
     if (_myProjects.isLoading) {
         return;
