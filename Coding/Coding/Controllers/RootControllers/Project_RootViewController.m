@@ -10,12 +10,14 @@
 #import "ProjectListView.h"
 #import "RDVTabBarController.h"
 #import "UIView+Common.h"
+#import <PopMenu/PopMenu.h>
 
 @interface Project_RootViewController ()
 @property (nonatomic, strong) iCarousel *myCarousel;
 @property (nonatomic, assign) NSInteger oldSelectedIndex;
 @property (nonatomic, strong) NSMutableDictionary *myProjectsDict;
 @property (nonatomic, strong) XTSegmentControl *mySegmentControl;
+@property (nonatomic, strong) PopMenu *myPopMenu;
 
 @end
 
@@ -162,6 +164,46 @@
 
 
 #pragma mark VC
+
+- (void)addItemClicked:(id)sender {
+
+    NSArray *menuItems = @[[MenuItem initWithTitle:@"项目" iconName:@"pop_Project" index:0],[MenuItem initWithTitle:@"任务" iconName:@"pop_Task" index:1],[MenuItem initWithTitle:@"冒泡" iconName:@"pop_Tweet" index:2],[MenuItem initWithTitle:@"添加好友" iconName:@"pop_User" index:3],[MenuItem initWithTitle:@"私信" iconName:@"pop_Message" index:4],[MenuItem initWithTitle:@"两步验证"  iconName:@"pop_2FA" index:5],];
+    if (!_myPopMenu) {
+        _myPopMenu = [[PopMenu alloc] initWithFrame:kScreen_Bounds items:menuItems];
+        _myPopMenu.perRowItemCount = 3;
+        _myPopMenu.menuAnimationType = kPopMenuAnimationTypeSina;
+    }
+    
+    _myPopMenu.didSelectedItemCompletion = ^(MenuItem *selectedItem) {
+    
+        switch (selectedItem.index) {
+            case 0:
+                
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                break;
+                
+            case 5:
+                break;
+            default:
+                NSLog(@"%@",selectedItem.title);
+                break;
+        }
+    };
+    
+    [_myPopMenu showMenuAtView:kKeyWindow startPoint:CGPointMake(0, -100) endPoint:CGPointMake(0, -100)];
+   
+}
+
 - (void)goToProject:(Project *)project {
 
 }
