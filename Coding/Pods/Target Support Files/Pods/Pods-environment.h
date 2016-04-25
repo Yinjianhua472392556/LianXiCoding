@@ -174,6 +174,12 @@
 #define COCOAPODS_VERSION_MINOR_PPiAwesomeButton 5
 #define COCOAPODS_VERSION_PATCH_PPiAwesomeButton 2
 
+// PopMenu
+#define COCOAPODS_POD_AVAILABLE_PopMenu
+#define COCOAPODS_VERSION_MAJOR_PopMenu 2
+#define COCOAPODS_VERSION_MINOR_PopMenu 4
+#define COCOAPODS_VERSION_PATCH_PopMenu 0
+
 // RBBAnimation
 #define COCOAPODS_POD_AVAILABLE_RBBAnimation
 #define COCOAPODS_VERSION_MAJOR_RBBAnimation 0
@@ -275,6 +281,12 @@
 #define COCOAPODS_VERSION_MAJOR_UMengAnalytics 3
 #define COCOAPODS_VERSION_MINOR_UMengAnalytics 6
 #define COCOAPODS_VERSION_PATCH_UMengAnalytics 6
+
+// XHRealTimeBlur
+#define COCOAPODS_POD_AVAILABLE_XHRealTimeBlur
+#define COCOAPODS_VERSION_MAJOR_XHRealTimeBlur 1
+#define COCOAPODS_VERSION_MINOR_XHRealTimeBlur 7
+#define COCOAPODS_VERSION_PATCH_XHRealTimeBlur 0
 
 // hpple
 #define COCOAPODS_POD_AVAILABLE_hpple

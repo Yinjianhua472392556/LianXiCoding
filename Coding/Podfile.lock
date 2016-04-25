@@ -68,6 +68,9 @@ PODS:
   - POP+MCAnimate/Velocity (2.0.1):
     - pop (~> 1.0)
     - POP+MCAnimate/Internal
+  - PopMenu (2.4):
+    - pop
+    - XHRealTimeBlur
   - PPiAwesomeButton (1.5.2):
     - FontAwesome+iOS
   - RBBAnimation (0.4.0)
@@ -93,6 +96,7 @@ PODS:
   - TTTAttributedLabel (1.10.1)
   - UIImage+BlurredFrame (0.0.4)
   - UMengAnalytics (3.6.6)
+  - XHRealTimeBlur (1.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
@@ -107,6 +111,7 @@ DEPENDENCIES:
   - MMMarkdown (= 0.3)
   - NYXImagesKit (= 2.3)
   - POP+MCAnimate (= 2.0.1)
+  - PopMenu
   - PPiAwesomeButton
   - RDVTabBarController
   - ReactiveCocoa (= 2.3.1)
@@ -135,6 +140,7 @@ SPEC CHECKSUMS:
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   POP+MCAnimate: a99e209148c602512de487f1160a44bf78572024
+  PopMenu: 26b97baeaf250070f4f61b93727ca86d127d7bc5
   PPiAwesomeButton: 16f7279582fd36f65186b24b83ef876217363eb5
   RBBAnimation: 4b2d66f6d993febce63cd564da934985313b9c59
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
@@ -149,5 +155,6 @@ SPEC CHECKSUMS:
   TTTAttributedLabel: c8f3801a6463b9c9b82b0c84c465fdda9751892a
   UIImage+BlurredFrame: ad2f7195c6947ea3117c7d202f75a51958d5061a
   UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65
+  XHRealTimeBlur: 661fadd5691ba2d349758e8fd5fbdb499ac55f8c
 
 COCOAPODS: 0.37.0

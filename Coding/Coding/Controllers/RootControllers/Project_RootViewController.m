@@ -71,7 +71,7 @@
     [self.view addSubview:_mySegmentControl];
     [self setupNavBtn];
     
-    self.icarouselScrollEnabled = NO;
+    self.icarouselScrollEnabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
