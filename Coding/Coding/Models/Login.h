@@ -27,4 +27,5 @@
 
 - (NSDictionary *)toParams;
 
++ (BOOL)isLoginUserGlobalKey:(NSString *)global_key;
 @end

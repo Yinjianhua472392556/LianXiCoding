@@ -147,4 +147,13 @@ static User *_curLoginUser;
 }
 
 
++ (BOOL)isLoginUserGlobalKey:(NSString *)global_key {
+
+    if (global_key.length <= 0) {
+        return NO;
+    }
+    
+    return [[self curLoginUser].global_key isEqualToString:global_key];
+}
+
 @end

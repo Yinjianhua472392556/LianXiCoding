@@ -44,11 +44,10 @@
     UINavigationController *nav_mytask = [[BaseNavigationController alloc] initWithRootViewController:mytask];
 
     RKSwipeBetweenViewControllers *nav_tweet = [RKSwipeBetweenViewControllers newSwipeBetweenViewControllers];
-    
-//    [nav_tweet.viewControllerArray addObjectsFromArray:@[[Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeAll],
-//                                                         [Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeFriend],
-//                                                         [Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeHot]]];
-//    nav_tweet.buttonText = @[@"冒泡广场", @"朋友圈", @"热门冒泡"];
+    nav_tweet.buttonText = @[@"冒泡广场", @"朋友圈", @"热门冒泡"];
+    [nav_tweet.viewControllerArray addObjectsFromArray:@[[Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeAll],
+                                                         [Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeFriend],
+                                                         [Tweet_RootViewController newTweetVCWithType:Tweet_RootViewControllerTypeHot]]];
     
     Message_RootViewController *message = [[Message_RootViewController alloc] init];
     UINavigationController *nav_message = [[BaseNavigationController alloc] initWithRootViewController:message];

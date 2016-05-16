@@ -18,4 +18,5 @@ typedef NS_ENUM(NSUInteger, Tweet_RootViewControllerType) {
 @interface Tweet_RootViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 + (instancetype)newTweetVCWithType:(Tweet_RootViewControllerType)type;
+
 @end

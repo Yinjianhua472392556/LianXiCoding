@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Projects.h"
+#import "Tweets.h"
 
 typedef NS_ENUM(NSUInteger, VerifyType) {
     VerifyTypeUnknow = 0,
@@ -33,4 +34,12 @@ typedef NS_ENUM(NSUInteger, VerifyType) {
 //Project
 - (void)request_Projects_WithObj:(Projects *)projects andBlock:(void (^)(Projects *data, NSError *error))block;
 - (void)request_Project_Pin:(Project *)project andBlock:(void (^)(id data, NSError *error))block;
+
+//Tweet
+- (void)request_Tweets_WithObj:(Tweets *)tweets andBlock:(void (^)(id data, NSError *error))block;
+- (void)request_Tweet_DoLike_WithObj:(Tweet *)tweet andBlock:(void (^)(id data, NSError *error))block;
+
+
+//Topic
+- (void)request_BannersWithBlock:(void (^)(id data, NSError *error))block;
 @end

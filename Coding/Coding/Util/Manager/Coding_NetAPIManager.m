@@ -99,4 +99,48 @@
 
 }
 
+#pragma mark Tweet
+- (void)request_Tweets_WithObj:(Tweets *)tweets andBlock:(void (^)(id, NSError *error))block {
+    tweets.isLoading = YES;
+    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:[tweets toPath] withParams:[tweets toParams] withMethodType:Get andBlock:^(id data, NSError *error) {
+        tweets.isLoading = NO;
+        if (data) {
+            [NSObject saveResponseData:data toPath:[tweets localResponsePath]];
+            id resultData = [data valueForKeyPath:@"data"];
+            NSArray *resultA = [NSObject arrayFromJSON:resultData ofObjects:@"Tweet"];
+            block(resultA,nil);
+        }else {
+            block(nil, error);
+        }
+    }];
+}
+
+- (void)request_Tweet_DoLike_WithObj:(Tweet *)tweet andBlock:(void (^)(id, NSError *))block {
+
+    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:[tweet toDoLikePath] withParams:nil withMethodType:Post andBlock:^(id data, NSError *error) {
+        if (data) {
+            block(data,nil);
+        }else {
+            block(nil,error);
+        }
+    }];
+}
+
+
+#pragma mark - topic
+
+- (void)request_BannersWithBlock:(void (^)(id, NSError *))block {
+
+    [[CodingNetAPIClient sharedJsonClient] requestJsonDataWithPath:@"api/banner/type/app" withParams:nil withMethodType:Get autoShowError:NO andBlock:^(id data, NSError *error) {
+        if (data) {
+            data = [data valueForKey:@"data"];
+            NSArray *resultA = [NSObject arrayFromJSON:data ofObjects:@"CodingBanner"];
+            block(resultA, nil);
+        }else {
+        
+            block(nil,error);
+        }
+    }];
+}
+
 @end
