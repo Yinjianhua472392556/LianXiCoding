@@ -10,6 +10,34 @@
 #import "Login.h"
 
 @implementation Tweet
+
+- (instancetype)init {
+
+    self = [super init];
+    if (self) {
+        _propertyArrayMap = [NSDictionary dictionaryWithObjectsAndKeys:@"Comment", @"comment_list",@"User", @"like_users", nil];
+        _canLoadMore = YES;
+        _isLoading = _willLoadMore = NO;
+        _contentHeight = 1;
+    }
+    return self;
+}
+
+- (void)setContent:(NSString *)content {
+    if (_content != content) {
+        _htmlMedia = [HtmlMedia htmlMediaWithString:content showType:MediaShowTypeNone];
+        _content = _htmlMedia.contentDisplay;
+    }
+}
+
+- (NSString *)address {
+    if (!_address || _address.length == 0) {
+        return @"未填写";
+    }else {
+        return _address;
+    }
+}
+
 - (NSInteger)numOfLikers {
 
     return MIN(_like_users.count + 1, MIN(_likes.intValue, [self maxLikerNum]));
@@ -28,7 +56,7 @@
 
 - (NSInteger)numOfComments {
 
-    return MIN(_comment_list.count + 1, MIN(_comments.intValue, 6));
+    return MIN(_comment_list.count, MIN(_comments.intValue, 6));
 }
 
 - (BOOL)hasMoreComments {
@@ -84,4 +112,30 @@
         }
     }
 }
+
+- (void)addNewComment:(Comment *)comment {
+
+    if (!comment) {
+        return;
+    }
+    if (_comment_list) {
+        [_comment_list insertObject:comment atIndex:0];
+    }else {
+    
+        _comment_list = [NSMutableArray arrayWithObject:comment];
+    }
+    
+    _comments = [NSNumber numberWithInteger:_comments.integerValue + 1];
+}
+
+- (void)deleteComment:(Comment *)comment{
+    if (_comment_list) {
+        NSUInteger index = [_comment_list indexOfObject:comment];
+        if (index != NSNotFound) {
+            [_comment_list removeObjectAtIndex:index];
+            _comments = [NSNumber numberWithInteger:_comments.integerValue -1];
+        }
+    }
+}
+
 @end

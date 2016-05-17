@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HtmlMedia.h"
-
+#import "Comment.h"
 @interface Tweet : NSObject
 
 @property (readwrite, nonatomic, strong) NSString *content, *device, *location, *coord, *address;
@@ -42,6 +42,9 @@
 
 - (NSString *)toDoLikePath;
 - (void)changeToLiked:(NSNumber *)liked;
+
+- (void)addNewComment:(Comment *)comment;
+- (void)deleteComment:(Comment *)comment;
 
 
 @end

@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, CommentSendType) {
 };
 
 @interface Comment : NSObject
+
 @property (readwrite, nonatomic, strong) NSString *content;
 @property (readwrite, nonatomic, strong) User *owner;
 @property (readwrite, nonatomic, strong) NSNumber *id, *owner_id, *tweet_id;

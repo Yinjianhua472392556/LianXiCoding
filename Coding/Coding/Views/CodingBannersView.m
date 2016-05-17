@@ -7,6 +7,7 @@
 //
 
 #import "CodingBannersView.h"
+#import "SMPageControl.h"
 
 @implementation CodingBannersView
 

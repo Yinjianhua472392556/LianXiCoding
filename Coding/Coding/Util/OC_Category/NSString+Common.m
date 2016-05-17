@@ -143,4 +143,23 @@
     return [self getSizeWithFont:font constrainedToSize:size].width;
 }
 
+
+#pragma mark emotion_monkey
+
+- (NSRange)rangeByTrimmingRightCharactersInSet:(NSCharacterSet *)characterSet {
+
+    NSUInteger location = 0;
+    NSUInteger length = [self length];
+    unichar charBuffer[length];
+    [self getCharacters:charBuffer];
+    for (length = [self length]; length > 0; length--) {
+        if (![characterSet characterIsMember:charBuffer[length - 1]]) {
+            break;
+        }
+    }
+    
+    return NSMakeRange(location, length - location);
+    
+}
+
 @end
