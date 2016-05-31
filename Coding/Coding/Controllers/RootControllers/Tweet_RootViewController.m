@@ -429,6 +429,9 @@
     [self goToDetailWithTweet:toTweet];
 }
 
+
+
+
 - (void)goToDetailWithTweet:(Tweet *)curTweet {
 
     

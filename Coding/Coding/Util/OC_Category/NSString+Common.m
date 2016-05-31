@@ -162,4 +162,11 @@
     
 }
 
+- (NSString *)trimWhitespace
+{
+    NSMutableString *str = [self mutableCopy];
+    CFStringTrimWhitespace((__bridge CFMutableStringRef)str);
+    return str;
+}
+
 @end
