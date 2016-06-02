@@ -40,6 +40,7 @@
 #import "NSDate+Common.h"
 #import "Login.h"
 #import "Coding_NetAPIManager.h"
+#import "MJPhotoBrowser.h"
 
 @interface TweetCell()
 
@@ -572,10 +573,21 @@
 
     if (collectionView == _mediaView) { //缩略图
         //        显示大图
-
+        int count = (int)_tweet.htmlMedia.imageItems.count;
+        NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
+        for (int i = 0; i<count; i++) {
+            HtmlMediaItem *imageItem = [_tweet.htmlMedia.imageItems objectAtIndex:i];
+            MJPhoto *photo = [[MJPhoto alloc] init];
+            photo.url = [NSURL URLWithString:imageItem.src]; // 图片路径
+//            photo.srcImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AppIcon120x120"]];
+            [photos addObject:photo];
+        }
         
         // 2.显示相册
-
+        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+        browser.currentPhotoIndex = indexPath.row; // 弹出相册时显示的第一张图片是？
+        browser.photos = photos; // 设置所有的图片
+        [browser show];
     }else {//点赞头像
         if (indexPath.row >= _tweet.numOfLikers - 1 && _tweet.hasMoreLikers) {
             if (_moreLikersBtnClickedBlock) {
