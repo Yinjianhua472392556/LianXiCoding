@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import "Tweets.h"
+#import "QBImagePickerController.h"
+
 @interface TweetSendViewController : BaseViewController
 
 @end

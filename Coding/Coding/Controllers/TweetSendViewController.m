@@ -7,6 +7,7 @@
 //
 
 #import "TweetSendViewController.h"
+#import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
 
 @interface TweetSendViewController ()
 

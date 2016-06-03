@@ -21,7 +21,12 @@
 #import "UIActionSheet+Common.h"
 #import "UITableViewCell+Common.h"
 
-@interface Tweet_RootViewController ()<UIMessageInputViewDelegate> {
+
+#import "QBImagePickerController.h"
+#import "Helper.h"
+#import "BaseNavigationController.h"
+
+@interface Tweet_RootViewController ()<UIMessageInputViewDelegate,QBImagePickerControllerDelegate> {
     CGFloat _oldPanOffsetY;
 }
 @property (nonatomic, assign) NSInteger curIndex; //保存传进来的type(做tweetsDict字典的键值)
@@ -212,7 +217,19 @@
 }
 
 - (void)sendTweet { //发送冒泡
+    //相册
+//    if (![Helper checkPhotoLibraryAuthorizationStatus]) {
+//        return;
+//    }
     
+    QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];
+    [imagePickerController.selectedAssetURLs removeAllObjects];
+    imagePickerController.filterType = QBImagePickerControllerFilterTypePhotos;
+    imagePickerController.delegate = self;
+    imagePickerController.allowsMultipleSelection = YES;
+    imagePickerController.maximumNumberOfSelection = 9;
+    UINavigationController *navigaitonController = [[BaseNavigationController alloc] initWithRootViewController:imagePickerController];
+    [self presentViewController:navigaitonController animated:YES completion:nil];
 
 }
 
@@ -452,5 +469,13 @@
 #pragma mark -
 #pragma mark UISearchDisplayDelegate Support
 
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didSelectAssets:(NSArray *)assets {
+    NSLog(@"didSelectAssets %@",assets);
+    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController{
+    [imagePickerController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
